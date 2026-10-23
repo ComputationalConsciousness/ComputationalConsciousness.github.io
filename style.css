@@ -106,3 +106,21 @@
     grid-column: 2;
   }
 }
+
+
+/* Compact, clickable speaker directory. Only applies to Speakers, not Organizers. */
+#speakers .speaker-hint { color: var(--muted); margin: -0.35rem 0 1.3rem; }
+#speakers .people-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+#speakers .speaker-card { padding: 0; min-height: 0; overflow: hidden; }
+#speakers .speaker-link { display: flex; height: 100%; min-height: 200px; flex-direction: column; align-items: center; padding: 22px 12px 18px; text-decoration: none; border-radius: inherit; transition: background .15s ease, box-shadow .15s ease; }
+#speakers .speaker-link:hover, #speakers .speaker-link:focus-visible { background: var(--soft); outline-offset: -3px; }
+#speakers .speaker-link:focus-visible { outline: 2px solid var(--accent); }
+#speakers .speaker-link .avatar { width: 86px; height: 86px; margin-bottom: 12px; }
+#speakers .speaker-link h3 { font-size: 1.07rem; margin: 0 0 5px; }
+#speakers .speaker-link p { font-size: .88rem; color: var(--muted); margin: 0; }
+#speakers .speaker-keynote { display: block; margin-top: auto; padding-top: 12px; font-size: .72rem; font-weight: 800; letter-spacing: .025em; color: var(--accent); }
+/* Override earlier last-row centering rule: five across gives two complete rows. */
+#speakers .speaker-card:last-child:nth-child(3n + 1) { grid-column: auto; }
+#talks .slot[id^="talk-"] { scroll-margin-top: 22px; }
+@media (max-width: 950px) and (min-width: 601px) { #speakers .people-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { #speakers .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } #speakers .speaker-link { padding: 16px 10px; min-height: 185px; } #speakers .speaker-link .avatar { width: 72px; height: 72px; } }
