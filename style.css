@@ -92,3 +92,17 @@
   font-size:1.1rem;
   padding:16px 28px;
 }
+
+/* Talks: video embeds use the same styling as the About video. */
+.talk-video {
+  width: 100%;
+  max-width: none;
+  margin: 0.75rem 0 1.75rem;
+}
+
+/* Center a single speaker in the final row of the three-column grid. */
+@media (min-width: 851px) {
+  #speakers .person:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
